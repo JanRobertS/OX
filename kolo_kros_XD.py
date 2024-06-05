@@ -60,7 +60,7 @@ class Tablica:
 
         return start_point1, end_point1
  
-class Kolo:
+class O:
     def __init__(self, Obiekt_tablica: Tablica, miejsce: int,  kolor: Tuple[int,int,int] = None):
         self.wymiar = Obiekt_tablica.wymiar
         self.sqrt_ilosci = int(np.sqrt(Obiekt_tablica.ilosc_miejsc_w_grze))
@@ -188,14 +188,12 @@ class Wyswietlanie:
             cv2.line(image, i, j, self.Obiekt_tablica.kolor, thickness=thickness)
         
         
-
 tablica_gry = [None for __ in range(9)]
 
-
-tablica = Tablica((500,500), ilosc_miejsc_w_grze=100, kolor_tla=(203,192,255))
-tablica_gry.append(Kolo(tablica, 0))
+tablica = Tablica((500,500), ilosc_miejsc_w_grze=9, kolor_tla=(203,192,255))
+tablica_gry.append(O(tablica, 0))
 tablica_gry.append(X(tablica, 7))
-tablica_gry.append(Kolo(tablica, 8))
+tablica_gry.append(O(tablica, 8))
 
 gra = Wyswietlanie(tablica,tablica_gry)
 
