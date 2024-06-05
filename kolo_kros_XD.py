@@ -13,6 +13,7 @@ class Tablica:
         self.plasza = self.tworzenie_planszy
 
         self.ilosc_miejsc_w_grze = ilosc_miejsc_w_grze
+        self.sqrt_miejsc_w_grze = int(np.floor(np.sqrt(ilosc_miejsc_w_grze)))
 
     
     def kolory(self, tlo: Tuple[int,int,int], kolor: Tuple[int,int,int], tryb_nocny: bool):
