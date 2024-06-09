@@ -31,12 +31,12 @@ def ustawienia() -> Tuple[int,bool, Union[X,O]]:
     while True:
         print("\nJakim znakiem chesz zaczynać O czy X?")
         znak = input("Wybierz znak: ")
-        if znak == "o" or znak == "O" or int(znak) == 0 or znak == "x" or znak == "X":   
+        if znak == "o" or znak == "O"  or znak == "x" or znak == "X":   
             break
 
         print("Błędny znak\nSpróbuj ponownie\n")
 
-    if znak == "o" or znak == "O" or int(znak) == 0:
+    if znak == "o" or znak == "O":
         znak = O
     elif znak == "x" or znak == "X":
         znak = X
@@ -64,7 +64,7 @@ def OX():
         if not wygrana:
             if silnik.spr_remis():
                 print("Remis!!!")
-                break
+                pass
 
         kolumna, wiersz = Wyswietlanie_OX.wyswietlanie_caloci(silnik.Tablica, silnik.tablica_gry,wygrana, start, end)
 

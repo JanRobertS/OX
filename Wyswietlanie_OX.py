@@ -90,6 +90,4 @@ def wyswietl_wygrana(image, Tablica: Tablica, start: Tuple[int,int], end: Tuple[
 
         end = end[0], end[1] + 2*polowa_odleglosci
 
-    print(start,end)
-
     cv2.line(image, start, end, Tablica.kolor, thickness=4)
