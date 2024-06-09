@@ -61,6 +61,46 @@ class Tablica:
 
         return start_point1, end_point1
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class O:
     def __init__(self, Obiekt_tablica: Tablica, miejsce: int,  kolor: Tuple[int,int,int] = None):
         self.wymiar = Obiekt_tablica.wymiar
@@ -134,6 +174,20 @@ class X:
         cv2.line(image, start_point2, end_point2, self.kolor, thickness=4)
 
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class Wyswietlanie:
     def __init__(self, Obiekt_tablica: Tablica, tablica_gry: List[int]):
