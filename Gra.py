@@ -54,13 +54,13 @@ def ustawienia() -> Tuple[int,bool, Union[X,O]]:
     return int(wielkosc_planszy), int(ilosc_do_wygrania), tryb_nocny, znak
 
 def ustawienia2():
-    return 5, True, O
+    return 5, 4, True, O
 
 
 def OX():
 
     print("\nGra rozpoczyna się\n")
-    wielkosc_planszy, ilosc_do_wygrania, tryb_nocny, znak_rozpoczynający = ustawienia2()
+    wielkosc_planszy, ilosc_do_wygrania, tryb_nocny, znak_rozpoczynający = ustawienia()
 
     silnik = Silnik([500,500],tryb_nocny,wielkosc_planszy)
 
