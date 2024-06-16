@@ -16,6 +16,14 @@ def ustawienia() -> Tuple[int,bool, Union[X,O]]:
         print("Błędna liczba\nSpróbuj ponownie\n")
 
     while True:
+        ilosc_do_wygrania = input("Podaj ile znaków w rzędzie by wygrać: ")
+        if ilosc_do_wygrania.isdigit():
+            if int(ilosc_do_wygrania) >= 2:
+                break
+
+        print("Błędna liczba\nSpróbuj ponownie\n")
+
+    while True:
         print("\nKolory\n1.Zwykły\n2.Tryb nocny\n")
         kolor = input("Wybierz który kolor: ")
         if kolor.isdigit():
@@ -43,7 +51,7 @@ def ustawienia() -> Tuple[int,bool, Union[X,O]]:
 
 
 
-    return int(wielkosc_planszy), tryb_nocny, znak
+    return int(wielkosc_planszy), int(ilosc_do_wygrania), tryb_nocny, znak
 
 def ustawienia2():
     return 5, True, O
@@ -52,14 +60,14 @@ def ustawienia2():
 def OX():
 
     print("\nGra rozpoczyna się\n")
-    wielkosc_planszy, tryb_nocny, znak_rozpoczynający = ustawienia2()
+    wielkosc_planszy, ilosc_do_wygrania, tryb_nocny, znak_rozpoczynający = ustawienia2()
 
     silnik = Silnik([500,500],tryb_nocny,wielkosc_planszy)
 
     aktualny_znak, poprzedni = znak_rozpoczynający, znak_rozpoczynający
 
     while True:
-        wygrana, start, end = silnik.spr_wygrana(poprzedni, wielkosc_planszy)
+        wygrana, start, end = silnik.spr_wygrana(poprzedni, ilosc_do_wygrania)
 
         if not wygrana:
             if silnik.spr_remis():
@@ -83,9 +91,5 @@ def OX():
                 poprzedni = X
 
 
-
-OX()
-
-
-
-
+if __name__ == "__main__":  
+    OX()
